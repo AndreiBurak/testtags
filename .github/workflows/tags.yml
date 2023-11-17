@@ -20,6 +20,6 @@ jobs:
           latestVer=${latestTag#*-}
           echo "RELEASE_VERSION=$latestVer" >> $GITHUB_ENV
       - name: Create 
-        if: ${{ endsWith(github.action.event.tag, '80') }}
+        if: ${{ endsWith(github.event.ref, '81') }}
         run:
             echo "Mytag ended with 80"
