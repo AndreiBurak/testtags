@@ -2,7 +2,7 @@ name: Upload artifacts
 on:
   push: 
     tags:
-      - '*'
+      - 'v\d\.\d\.80'
 permissions: 
   contents: 
     read
