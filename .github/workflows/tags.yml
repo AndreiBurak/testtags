@@ -1,0 +1,26 @@
+name: Upload artifacts
+on:
+  create:
+    tags:
+      'version-\d.\d{2}}.\d{4}.80'
+  workflow_dispatch:
+permissions:
+  content:
+     read
+upload:
+  runs-on: ubuntu-latest
+  steps:
+  - uses: actions/checkout@v2
+    with:
+      fetch-depth: 0
+  - name: Set env
+    shell: bash
+    run:  |
+      latestTag=$(git describe --tags `git rev-list --tags --max-count=1 --branches=master`)
+      latestVer=${latestTag#*-}
+      echo "RELEASE_VERSION=$latestVer" >> $GITHUB_ENV
+  - name: Create 
+    if: ${{ endsWith(github.action.event.tag, '80') }}
+    run:
+      echo "Tag is "
+
