@@ -22,4 +22,4 @@ jobs:
       - name: Create 
         if: ${{ endsWith(github.event.ref, '81') }}
         run:
-            echo "Mytag ended with 80"
+            echo "Mytag ended with 81"
