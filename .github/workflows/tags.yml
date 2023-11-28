@@ -21,7 +21,7 @@ jobs:
           echo "RELEASE_VERSION=$latestVer" >> $GITHUB_ENV
       - name: Create 
         if: ${{ endsWith(github.event.ref, '81') }}
-        run:
+        run: |
             ls -lh
             echo "My Path $PWD"
             echo "Mytag ended with 81"
