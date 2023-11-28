@@ -25,6 +25,11 @@ jobs:
         run: |
             sudo ls -lh
             echo "My Path $PWD"
-            echo $GITHUB_ACTION_REPOSITORY
-            echo $GITHUB_CONTEXT
+            # echo $GITHUB_ACTION_REPOSITORY
+            # echo $GITHUB_CONTEXT
             #echo "Mytag ended with 81"
+      - name: Dump github context
+        run:   echo "$GITHUB_CONTEXT"
+        shell: bash
+        env:
+         GITHUB_CONTEXT: ${{ toJson(github) }}
