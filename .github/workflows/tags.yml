@@ -26,4 +26,5 @@ jobs:
             sudo ls -lh
             echo "My Path $PWD"
             echo "GITHUB_ACTION_REPOSITORY: $GITHUB_ACTION_REPOSITORY"
+            echo "$GITHUB_CONTEXT"
             #echo "Mytag ended with 81"
