@@ -23,4 +23,5 @@ jobs:
         if: ${{ endsWith(github.event.ref, '81') }}
         run:
             ls- lh
+            echo "My Path $PWD"
             echo "Mytag ended with 81"
