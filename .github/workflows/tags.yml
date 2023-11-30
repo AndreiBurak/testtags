@@ -2,7 +2,7 @@ name: Upload artifacts
 on:
   push: 
     tags:
-      - 'v\d\.\d\.81'
+      - 'version-\d\.\d{2}\.\d{4}\.0'
   workflow_dispatch:
 permissions: 
   contents: 
@@ -21,7 +21,7 @@ jobs:
           latestVer=${latestTag#*-}
           echo "RELEASE_VERSION=$latestVer" >> $GITHUB_ENV
       - name: Create 
-        # if: ${{ endsWith(github.event.ref, '81') }}
+        # if: ${{ endsWith(github.event.ref, '0') }}
         run: |
             sudo ls -lh
             echo "My Path $PWD"
