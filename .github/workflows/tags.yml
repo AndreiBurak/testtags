@@ -28,6 +28,5 @@ jobs:
             echo $GITHUB_ACTION_REPOSITORY
             echo $GITHUB_CONTEXT
             #echo "Mytag ended with 0"
-            azcopy copy "./src" \
-              "https://storageazcopytest001.blob.core.windows.net/artifacts/main?${{ secrets.AZURE_STORAGE_KEY }}" \
-              --recursive
+            azcopy copy "./src/*" \
+              "https://storageazcopytest001.blob.core.windows.net/artifacts/main?${{ secrets.AZURE_STORAGE_KEY }}" 
