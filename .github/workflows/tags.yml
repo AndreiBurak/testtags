@@ -29,5 +29,5 @@ jobs:
             echo $GITHUB_CONTEXT
             #echo "Mytag ended with 0"
             azcopy copy ./src \
-              'https://stazcopytest001.blob.core.windows.net/artifacts/main?${{ secrets.AZURE_STORAGE_KEY }}' \
+              'https://storageazcopytest001.blob.core.windows.net/artifacts/main?${{ secrets.AZURE_STORAGE_KEY }}' \
               --recursive
