@@ -2,7 +2,7 @@ name: Upload artifacts
 on:
   push: 
     tags:
-      - 'version-\d\.\d{2}\.*'
+      - 'version-\d\.\d\d\.*'
   workflow_dispatch:
 permissions: 
   contents: 
