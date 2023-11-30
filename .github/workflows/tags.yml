@@ -2,7 +2,8 @@ name: Upload artifacts
 on:
   push: 
     tags:
-      - 'version\d\.\d{2}\.\d{4}\.0'
+      - 'v\d\.\d\.81'
+  workflow_dispatch:
 permissions: 
   contents: 
     read
@@ -12,7 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref:
           fetch-depth: 0
       - name: Set env
         shell: bash
@@ -21,15 +21,10 @@ jobs:
           latestVer=${latestTag#*-}
           echo "RELEASE_VERSION=$latestVer" >> $GITHUB_ENV
       - name: Create 
-        # if: ${{ endsWith(github.event.ref, '.0') }}
+        # if: ${{ endsWith(github.event.ref, '81') }}
         run: |
             sudo ls -lh
             echo "My Path $PWD"
-            # echo $GITHUB_ACTION_REPOSITORY
-            # echo $GITHUB_CONTEXT
-            #echo "Mytag ended with 0"
-      - name: Dump github context
-        run:   echo "$GITHUB_CONTEXT"
-        shell: bash
-        env:
-         GITHUB_CONTEXT: ${{ toJson(github) }}
+            echo $GITHUB_ACTION_REPOSITORY
+            echo $GITHUB_CONTEXT
+            #echo "Mytag ended with 81"
