@@ -11,5 +11,5 @@ jobs:
               uses: actions/checkout@master
             - run: ls -lh
             - name: Upload artifacts
-              uses: ./.github/workflows/tags.yml 
+              uses: ./.github/workflows/__tags.yml 
 
