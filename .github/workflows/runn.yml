@@ -7,6 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - uses: ./.github/workflows/tags.yml 
-              with:
-                boolean: true
+            - run: ls -lhR
+            - name: Upload artifacts
+              uses: ./.github/workflows/tags.yml 
+
