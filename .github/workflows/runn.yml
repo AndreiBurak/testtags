@@ -10,7 +10,8 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
               with:
-                  fetch-depth: 0
+                sparse-checkout: |
+                    .github
             - run: ls -lh
             - name: Upload artifacts
               uses: ./.github/workflows/tags.yml 
