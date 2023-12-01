@@ -8,10 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v4
-              with:
-                sparse-checkout: |
-                    .github
+              uses: actions/checkout@master
             - run: ls -lh
             - name: Upload artifacts
               uses: ./.github/workflows/tags.yml 
