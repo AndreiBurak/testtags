@@ -7,8 +7,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v3
-            - run: ls -lhR 
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+            - run: ls -lh
             - name: Upload artifacts
               uses: ./.github/workflows/tags.yml 
 
