@@ -7,6 +7,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
+              with:
+                sparse-checkout: |
+                    .github
+                    src
             - run: ls -lhR ../
             - name: Upload artifacts
               uses: ./.github/workflows/tags.yml 
