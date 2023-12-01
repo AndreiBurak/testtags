@@ -1,5 +1,6 @@
 name: Runner
 on:
+    push: 
     workflow_dispatch: 
 jobs:
     run_tags:
