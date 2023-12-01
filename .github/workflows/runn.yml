@@ -6,6 +6,7 @@ jobs:
         name: run_tags
         runs-on: ubuntu-latest
         steps:
+            - uses: actions/checkout@v4
             - uses: ./.github/workflows/tags.yml
               with:
                 boolean: true
