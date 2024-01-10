@@ -15,7 +15,7 @@ jobs:
               shell: pwsh
               run: |
                 new-item -name ${{ env.DISTR_DIR }}\123.msi -itemtype file -force
-                if (!(Test-Path ${{ env.DISTR_DIR }}\*.msi)) { 
+                if (!(Test-Path ${{ env.DISTR_DIR }}\123.msi)) { 
                 Write-Output "::error ::ECDIS distro files are mising." 
                 exit 1 }
                 
