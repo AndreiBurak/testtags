@@ -16,7 +16,6 @@ jobs:
               run: |
                 if (!(Test-Path ${{ env.DISTR_DIR }}\*.msi)) { `
                 Write-Output "::error ::ECDIS distro files are mising." `
-                exit 1 `
-                }
+                exit 1 }
                 
 
