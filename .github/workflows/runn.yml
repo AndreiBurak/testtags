@@ -5,11 +5,18 @@ on:
 jobs:
     run_tags:
         name: run_tags
-        runs-on: ubuntu-latest
+        runs-on: windows-latest
         steps:
             - name: Checkout
               uses: actions/checkout@master
-            - run: ls -lh
-            - name: Upload artifacts
-              uses: ./.github/workflows/__tags.yml 
+            - name: Check
+              env: 
+                  env.DISTR_DIR: $PWD
+              shell: pwsh
+              run: |
+                if (!(Test-Path ${{ env.DISTR_DIR }}\*.msi)) { `
+                Write-Output "::error ::ECDIS distro files are mising." `
+                exit 1 `
+                }
+                
 
