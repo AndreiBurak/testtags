@@ -11,11 +11,11 @@ jobs:
               uses: actions/checkout@master
             - name: Check
               env: 
-                  env.DISTR_DIR: $PWD
+                  DISTR_DIR: $PWD
               shell: pwsh
               run: |
-                new-item -name 123.msi -itemtype file -force
-                if (!(Test-Path *.msi)) { 
+                new-item -name 123.msi -path ${{ env.DISTR_DIR }} -itemtype file -force
+                if (!(Test-Path "${{ env.DISTR_DIR }}\*.msi")) { 
                 Write-Output "::error ::ECDIS distro files are mising." 
                 exit 1 }
                 else {
