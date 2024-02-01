@@ -5,7 +5,7 @@ on:
 jobs:
     run_tags:
         name: run_tags
-        runs-on: windows-latest
+        runs-on: mytestubuntu3
         steps:
             - name: Checkout
               uses: actions/checkout@master
